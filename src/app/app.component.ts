@@ -19,7 +19,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
     }
   `],
 })
-export class PizzaPartyComponent {}
 
 export class AppComponent {
   durationInSeconds = 5;
@@ -38,9 +37,9 @@ export class AppComponent {
     this.router.navigate(['/auth/signin']).then(() => {
       this.sessionService.clear();
       AuthService.user = null;
-      this._snackBar.openFromComponent(PizzaPartyComponent, {
-        duration: this.durationInSeconds * 1000,
-      });
+         this._snackBar.open("message", "a", {
+          duration: 2000,
+        });
     });
   }
 
